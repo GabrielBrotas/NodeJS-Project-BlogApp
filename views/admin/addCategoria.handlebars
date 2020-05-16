@@ -1,0 +1,29 @@
+{{!-- Estrutura para mostrar os erros caso tenha --}}
+{{!-- Para cada erro que tiver no array criado --}}
+{{#each erros}}
+
+    {{!-- mostrar o parametro texto --}}
+    <div class="alert alert-danger">{{texto}}</div>
+
+{{else}}
+
+{{/each}}
+
+
+
+{{!-- classes do bootstrap para formatar --}}
+<h3>Nova Categoria</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/categorias/nova" method="POST">
+            
+            <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" placeholder="Nome da categoria" class="form-control">
+            
+            <label for="slug">Slug: </label>
+                <input type="text" id="slug" name="slug" placeholder="Slug da categoria" class="form-control">
+
+            <button class="btn btn-primary mt-4" type="submit">Criar Categoria</button>
+        </form>
+    </div>
+</div>

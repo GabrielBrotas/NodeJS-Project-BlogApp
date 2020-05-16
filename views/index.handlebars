@@ -1,0 +1,35 @@
+ <div class="jumbotron">
+  <h1 class="display-4">Pagina de posts</h1>
+  <p class="lead">Este é um projeto basico para aprender os fundamentos do node.js + mongoDB</p>
+  <hr class="my-4">
+  <p>para mais informações sobre mim visite meu <a href="https://github.com/GabrielBrotas" target="_blank">github</a> ou canal do youtube para tutoriais.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Cadastre-se</a>
+</div>
+
+<hr>
+
+ <h2>Postagens recentes: </h2>
+
+{{#each postagens}}
+
+    <div class="card mt-4">
+        <div class="card-body">
+            
+            <h3> {{titulo}} </h3>
+            <p> {{descricao}} </p>
+
+            <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+
+            <hr>
+
+            <small>Categoria: {{categoria.nome}}</small><br>
+            <small>Data de publicacao: {{data}}</small>
+
+        </div>
+    </div>
+
+{{else}}
+
+    <h5>Nenhuma postagem</h5>
+
+{{/each}}

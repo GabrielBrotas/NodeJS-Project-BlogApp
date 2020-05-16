@@ -1,0 +1,31 @@
+{{#each erros}}
+
+    {{!-- mostrar o parametro texto --}}
+    <div class="alert alert-danger">{{texto}}</div>
+
+{{else}}
+
+{{/each}}
+
+
+
+{{!-- classes do bootstrap para formatar --}}
+<h3>Editar Categoria</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/categorias/edit" method="POST">
+            
+            {{!-- um input invisivel para pegar essa informacao --}}
+            <input type="hidden" name="id" value="{{categoria._id}}">
+
+            <label for="nome">Nome: </label>
+                <input type="text" value="{{categoria.nome}}" id="nome" name="nome" placeholder="Nome da categoria" class="form-control">
+            
+            <label for="slug">Slug: </label>
+                <input type="text" value="{{categoria.slug}}" id="slug" name="slug" placeholder="Slug da categoria" class="form-control">
+
+            <button class="btn btn-primary mt-4" type="submit">Editar Categoria</button>
+            
+        </form>
+    </div>
+</div>
